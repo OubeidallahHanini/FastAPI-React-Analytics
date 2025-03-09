@@ -2,22 +2,22 @@ import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
 import Cookies from "js-cookie";
-import AuthNavbar from "../../components/Navbars/AuthNavbar";  // Assure-toi de ce chemin exact
+import AuthNavbar from "../../components/Navbars/AuthNavbar";  
 
 export default function Login() {
   const history = useHistory();
   
-  // États pour gérer les inputs et les erreurs
+  // States for the input
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({ email: "", password: "" });
 
-  // Fonction de validation
+  // Function of validation
   const validateForm = () => {
     let isValid = true;
     let newErrors = { email: "", password: "" };
 
-    // Vérification de l'email
+    // Email verification
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!email) {
       newErrors.email = "Email is required.";
@@ -27,7 +27,7 @@ export default function Login() {
       isValid = false;
     }
 
-    // Vérification du mot de passe
+    // Password Verif
     if (!password) {
       newErrors.password = "Password is required.";
       isValid = false;
@@ -36,15 +36,15 @@ export default function Login() {
       isValid = false;
     }
 
-    // Met à jour les erreurs
+    // Updating errors
     setErrors(newErrors);
     return isValid;
   };
 
-  // Fonction pour gérer la connexion
+  // Function for signing in
   const handleSignIn = async () => {
     if (!validateForm()) {
-      return;  // Arrêter l'exécution si le formulaire n'est pas valide
+      return;  // Stop execution if not valid.
     }
 
     try {
@@ -79,7 +79,7 @@ export default function Login() {
               </div>
               <div className="flex-auto px-4 lg:px-10 py-10 pt-0">
                 <form onSubmit={(e) => e.preventDefault()}>
-                  {/* Champ Email */}
+                  {/*  Email */}
                   <div className="relative w-full mb-3">
                     <label className="block uppercase text-blueGray-600 text-xs font-bold mb-2">
                       Email
@@ -98,7 +98,7 @@ export default function Login() {
                     )}
                   </div>
 
-                  {/* Champ Mot de passe */}
+                  {/* Password */}
                   <div className="relative w-full mb-3">
                     <label className="block uppercase text-blueGray-600 text-xs font-bold mb-2">
                       Password
@@ -119,7 +119,7 @@ export default function Login() {
 
                
 
-                  {/* Bouton de connexion */}
+                  {/* Button of connexion */}
                   <div className="text-center mt-6">
                     <button
                       onClick={handleSignIn}

@@ -168,7 +168,7 @@ def get_advanced_key_metrics():
             select(func.sum(sales_table.c.gross_sales))
             .where(sales_table.c.order_date >= first_day_last_month)
             .where(sales_table.c.order_date < first_day_this_month)
-        ).scalar() or 1  # éviter division par 0
+        ).scalar() or 1 
 
         monthly_sales_growth = ((sales_this_month - sales_last_month) / sales_last_month) * 100
 

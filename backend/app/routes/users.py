@@ -17,7 +17,7 @@ def get_db():
 
 @router.post("/", response_model=UserResponse)
 def create_new_user(user: UserCreate, db: Session = Depends(get_db)):
-    # For example: check if the email already exists, etc.
+    # For example: check if the email already exists
     return create_user(db, user)
 
 @router.get("/{user_id}", response_model=UserResponse)

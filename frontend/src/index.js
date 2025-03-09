@@ -9,16 +9,17 @@ import Admin from "layouts/Admin.js";
 import Auth from "layouts/Auth.js";
 import PrivateRoute from "components/PrivateRoute";
 
-// Composant qui redirige selon authentification
+// Component that redirects based on authentication
 const RootRedirect = () => <Redirect to="/admin/dashboard" />;
 
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
-      {/* Route protégée via PrivateRoute */}
+
+        {/* Protected route via PrivateRoute */}
       <PrivateRoute path="/admin" component={Admin} />
 
-      {/* Routes publiques */}
+      {/* public Routes  */}
       <Route path="/auth" component={Auth} />
 
       {/* Route racine */}
@@ -26,7 +27,7 @@ ReactDOM.render(
         <Redirect to="/admin/dashboard" />
       </Route>
 
-      {/* Autres URLs renvoyées vers / */}
+      {/* Others are redirect here / */}
       <Redirect from="*" to="/" />
     </Switch>
   </BrowserRouter>,

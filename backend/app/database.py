@@ -22,7 +22,6 @@ DB_NAME = os.getenv("DB_NAME", "sayano")
 
 
 # Build the MySQL connection URL
-# DATABASE_URL = "mysql+pymysql://root:abdou123@localhost:3306/sayano"
 DATABASE_URL = f"mysql+pymysql://{DB_USERNAME}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
 
 

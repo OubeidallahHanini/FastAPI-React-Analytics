@@ -13,7 +13,7 @@ import Tables from "views/admin/Tables.js";
 import UploadCsv from "views/admin/UploadCsv";
 
 export default function Admin() {
-  // 🚀 Ajout d'un state pour gérer le rafraîchissement
+  // State to manipulate refresh
   const [refreshTrigger, setRefreshTrigger] = useState(0);
 
   return (
@@ -21,7 +21,7 @@ export default function Admin() {
       <Sidebar />
       <div className="relative md:ml-64 bg-blueGray-100">
         <AdminNavbar />
-        {/* Header : Rafraîchi lorsqu'on met à jour refreshTrigger */}
+        {/* Header : Refresh when Updating refreshTrigger */}
         <HeaderStats refreshTrigger={refreshTrigger} />
 
         <div className="px-4 md:px-10 mx-auto w-full -m-24">

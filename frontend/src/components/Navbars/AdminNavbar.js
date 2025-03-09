@@ -10,7 +10,7 @@ const handleLogout = async () => {
     await axios.post("http://localhost:9000/auth/logout", {}, { withCredentials: true });
     localStorage.removeItem("token");
 
-    history.push("/login"); // Utiliser history.push() en v5
+    history.push("/login"); 
   } catch (error) {
     console.error("Erreur lors de la déconnexion :", error);
   }
@@ -33,7 +33,7 @@ const handleLogout = async () => {
           {/* User */}
           <ul className="flex-col md:flex-row list-none items-center hidden md:flex">
             <button
-              onClick={handleLogout} // Ajout de la fonction de déconnexion
+              onClick={handleLogout} // For logout
               className="px-4 py-2 bg-red-600 text-white font-semibold rounded-lg shadow-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50 transition duration-300 ease-in-out transform hover:scale-105 active:scale-95"
             >
               Logout

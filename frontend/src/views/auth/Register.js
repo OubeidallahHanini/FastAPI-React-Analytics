@@ -6,18 +6,18 @@ import AuthNavbar from "../../components/Navbars/AuthNavbar"; // Assure-toi du b
 export default function Register() {
   const history = useHistory();
 
-  // États pour gérer les inputs et les erreurs
+  // To manage state 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [acceptTerms, setAcceptTerms] = useState(false); // Case à cocher
   const [errors, setErrors] = useState({ email: "", password: "", acceptTerms: "" });
 
-  // Fonction de validation
+  // Validation functions
   const validateForm = () => {
     let isValid = true;
     let newErrors = { email: "", password: "", acceptTerms: "" };
 
-    // Vérification email
+    // Email verification
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!email) {
       newErrors.email = "Email is required.";
@@ -27,7 +27,7 @@ export default function Register() {
       isValid = false;
     }
 
-    // Vérification mot de passe
+    // Password verif
     if (!password) {
       newErrors.password = "Password is required.";
       isValid = false;
@@ -36,7 +36,7 @@ export default function Register() {
       isValid = false;
     }
 
-    // Vérification case "Accepter les droits"
+    // Verif of accepting terms
     if (!acceptTerms) {
       newErrors.acceptTerms = "You must accept the terms and conditions.";
       isValid = false;
@@ -46,10 +46,10 @@ export default function Register() {
     return isValid;
   };
 
-  // Fonction pour gérer l'inscription
+  // Function for signing up 
   const handleSignUp = async () => {
     if (!validateForm()) {
-      return; // Arrêter si le formulaire n'est pas valide
+      return; // Stop form if invalid
     }
 
     try {

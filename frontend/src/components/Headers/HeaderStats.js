@@ -4,7 +4,7 @@ import axios from "axios";
 // components
 import CardStats from "components/Cards/CardStats.js";
 
-export default function HeaderStats({ refreshTrigger }) { // 👈 Reçoit refreshTrigger
+export default function HeaderStats({ refreshTrigger }) { // Recieve Refresh trigger
   const [metrics, setMetrics] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -25,7 +25,7 @@ export default function HeaderStats({ refreshTrigger }) { // 👈 Reçoit refres
     return <div className="text-white text-center p-4">Chargement des métriques...</div>;
   }
 
-  // Initialisation sécurisée des variables
+  // Init variables and managing the data efficiently when no data provided
   const totalSales = metrics?.total_sales ? metrics.total_sales.toLocaleString() : "0";
   const avgOrderValue = metrics?.average_order_value ? metrics.average_order_value.toFixed(2) : "0.00";
   const totalUnitsSold = metrics?.total_units_sold ? metrics.total_units_sold.toLocaleString() : "0";

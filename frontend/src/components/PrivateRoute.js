@@ -11,7 +11,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
     axios.get("http://localhost:9000/auth/me", { withCredentials: true })
     .then(() => setIsAuth(true))
       .catch(() => setIsAuth(false));
-  }, [rest.location]); // Revérifie à chaque changement de route
+  }, [rest.location]); // Verif in any route changing
 
   if (isAuth === null) {
     return <div>Loading...</div>;

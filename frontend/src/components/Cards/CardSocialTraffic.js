@@ -6,9 +6,9 @@ export default function CardSalesByCountry() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:9000/api/sales-by-country") // Appel à l'API des ventes par pays
+      .get("http://localhost:9000/api/sales-by-country") 
       .then((response) => {
-        const data = response.data || []; // S'assurer que `data` est un tableau valide
+        const data = response.data || []; 
         setSalesData(data);
       })
       .catch((error) =>
