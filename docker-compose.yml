@@ -1,0 +1,52 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "9000:9000"
+    volumes:
+      - ./backend:/app
+    environment:
+      - DB_USERNAME=user
+      - DB_PASSWORD=password
+      - DB_HOST=db  
+      - DB_PORT=3306
+      - DB_NAME=mydatabase
+    depends_on:
+      db:
+        condition: service_healthy
+    command: >
+      sh -c "sleep 10 && uvicorn app.main:app --host 0.0.0.0 --port 9000"
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    stdin_open: true
+    tty: true
+
+  db:
+    image: mysql:8.0 
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: mydatabase
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      retries: 5
+      start_period: 20s
+
+volumes:
+  mysql_data:
