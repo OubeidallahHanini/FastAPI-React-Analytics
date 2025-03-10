@@ -31,19 +31,21 @@ React Hooks manage real-time data updates efficiently.
 
 
 
-Estimated Time Spent
+## Estimated Time Spent
 
+| Feature                        | Estimated Time | Actual Time Taken |
+|--------------------------------|---------------|-------------------|
+| **Backend - Auth**             | 3H            | 3H                |
+| **Backend - Sales + Summary**  | 4H            | 2H                |
+| **Backend - Metrics**          | 3H            | 2H                |
+| **Frontend - Auth**            | 5H            | 2H30              |
+| **Frontend - Dashboard (LineChart + BarChart)** | 4H        | 2H30 |
+| **Frontend - Metrics**         | 3H            | 2H                |
+| **Frontend - Template & UI**   | 2H            | 2H                |
 
-Backend - Auth : Estimated Time 3H / Actual Time Taken 3H
-Backend - Sales + Summary : Estimated Time 4H / Actual Time Taken 2H
-Backend - Metrics : Estimated Time 3H / Actual Time Taken 2H
-Frontend - Auth: Estimated Time 5H / Actual Time Taken 2H30
-Frontend - Dashboard (LineChart + BarChart) : Estimated Time 4H / Actual Time Taken 2H30
-Frontend - Metrics : Estimated Time 3H / Actual Time Taken 2H
-Frontend - Template & UI : Estimated Time 2H / Actual Time Taken 2H
+📀 **Total Estimated Time:** 24H  
+📄 **Total Time Taken:** 15H  
 
-
-📀 Total Estimated Time: 24H           📄 Total Time Taken: 15H
-
+---
 
 Thank you for this opportunity, I truly appreciated the experience and enjoyed working on it. 🚀
